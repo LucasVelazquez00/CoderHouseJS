@@ -1,0 +1,22 @@
+
+body{
+    margin: 1em;
+}
+
+.user-login{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.user-login--position{
+    width: 10em;
+    margin-right: 4em;
+
+}
+.user-login--text{
+    margin-top: 0.5em;
+}
+
+.card__day{
+    width: 15em;
+}
