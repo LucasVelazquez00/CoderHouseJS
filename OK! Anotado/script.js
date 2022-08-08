@@ -60,10 +60,10 @@ let array = ['No tienes nada para hacer','-Tenés que ir al médico a las 14:00'
 }
 diaSemana ()*/
 
-
+/* 
   let nickSaved = 'Lucas';
-/*  let passSaved = '1234';
-  let numero = 0;
+  let passSaved = '1234';
+ let numero = 0;
 
 function login (){
   alert('Buenas! Bienvenido/a a OK, Anotado');
@@ -86,8 +86,8 @@ function login (){
   login()
 
   //Login--^
-  
-
+  */
+/*
 
 class Dia {
   constructor (fecha, tarea, horario){
@@ -148,8 +148,8 @@ function mostrarArray (array){
 alert (mostrarArray(pregunta(preguntaAB,dias)));
 
 
-*/
-/*
+
+
 let terminar = true
 
 function ingresarLibro (){
@@ -171,34 +171,57 @@ function agregarTarea (preguntaQueHacer, Dia){
 
   dias.push (diaNuevo)
 }
-agregarTarea ()*/
+agregarTarea ()
+
+*/
 
 
 
 
+
+
+
+
+/*
 
 
 //-clase
 
 
-class Dia {
+class Tarea {
 
-  constructor(id, fecha, tarea, hora) {
+  constructor(id, fecha, texto, hora) {
       this.id = parseInt(id);
       this.fecha = fecha;
-      this.tarea = tarea;
+      this.texto = texto;
       this.hora = hora;
   }
 
 }
 
-const dias = [
-  new Dia(1, '24.12', 'Navidad', 22),
-  new Dia(2, '23.10', 'Mi cumpleaños', 00),
-  new Dia(3, '31.12', 'Año nuevo', 20)
+const tareas = [
+  new Tarea (2, '23.10', 'Mi cumpleaños', 'almuerzo con mi familia a las 14'),
+  new Tarea (3, '31.12', 'Año nuevo', 'cena a las 19')
 ]
 
-console.log(dias);
+console.log(tareas);
+
+
+
+
+//function crear tarjeta
+function crearTarjeta (tareas){
+  let box = document.querySelector('title-new-card','date-new-card', 'text-new-card', 'create-card');
+  tarjeras.forEach(tareas =>{
+    box.innerHTML += 
+    `<div class="card card-body card__day">
+    <h5 class="card-title"></h5>
+    <h6 class="card-subtitle mb-2 text-muted">24.12</h6>
+    <p class="card-text">Cena de navidad 22:00hs.</p>
+    <a href="#" class="delete-card">Delete card</a>
+</div>`
+  })
+}
 
 
 
@@ -221,6 +244,10 @@ while (seguir) {
 
   console.log(dias);
 } 
+
+
+
+
 
 
 
@@ -266,7 +293,7 @@ function stringArray(array){
 
 
 alert(stringArray(mostrar(comoMostrar,dias)));
-/*
+
 nu = 0
 
 let pregunta = prompt('quieres hacer de vuelta algo? (si / no)')
@@ -277,4 +304,78 @@ if(pregunta == 'si'){
   alert(preguntaInicial());
 }
 else{alert('F')}
-}*/
+}
+
+*/
+
+class Tarea {
+
+  constructor(titulo, fecha, texto) {
+      this.titulo = titulo;
+      this.fecha = fecha;
+      this.texto = texto;
+  }
+}
+const tareas = [
+  new Tarea ('Año nuevo', '31.12', 'cena a las 19')
+]
+
+let titulo = document.getElementById ('title-new-card');
+let fecha = document.getElementById ('date-new-card');
+let texto = document.getElementById ('text-new-card');
+let boton = document.getElementById('create-card');
+
+console.log(titulo.value)
+
+localStorage.setItem('nickname','nick');
+localStorage.setItem('password','pass');
+
+let nickSaved = 'nick';
+let passSaved = 'pass';
+
+
+
+function login (nick,pass){
+
+while (true) {
+  
+  let nick = prompt ('Escribe tu nick');
+  let pass = prompt ('Escribe tu password');
+
+    if ((nick === nickSaved)&&((pass === passSaved))){
+      alert('Bienvenido/a de vuelta');
+      break;}
+  
+      else{
+      alert('No te conozco, reintenta');
+    }
+  }
+}
+
+function crearTarea (){
+  
+  let titulo = document.getElementById('title-new-card');
+  let fecha = document.getElementById('date-new-card');
+  let texto = document.getElementById('text-new-card');
+
+  const nuevaTarea = new Tarea (titulo, fecha, texto);
+  tareas.push(nuevaTarea);
+
+}
+function crearCarta (){
+boton.addEventListener('click', crearTarea(), ()=> {
+  let nuevoDiv = document.createElement ('div');
+  document.main.div.appendChild(nuevoDiv)
+  nuevoDiv.innerHTML+= 
+  `<div class="card card-body card__day">
+  <h5 class="card-title">${tareas[0]}</h5>
+  <h6 class="card-subtitle mb-2 text-muted">${tareas[1]}</h6>
+  <p class="card-text">${tareas[2]}</p>
+  <a href="#" class="delete-card">Delete card</a>
+  </div>`
+});
+}
+login(nickSaved,passSaved);
+
+crearCarta()
+
