@@ -175,13 +175,6 @@ agregarTarea ()
 
 */
 
-
-
-
-
-
-
-
 /*
 
 
@@ -309,73 +302,97 @@ else{alert('F')}
 */
 
 class Tarea {
-
   constructor(titulo, fecha, texto) {
-      this.titulo = titulo;
-      this.fecha = fecha;
-      this.texto = texto;
+    this.titulo = titulo;
+    this.fecha = fecha;
+    this.texto = texto;
   }
 }
-const tareas = [
-  new Tarea ('Año nuevo', '31.12', 'cena a las 19')
-]
 
-let titulo = document.getElementById ('title-new-card');
-let fecha = document.getElementById ('date-new-card');
-let texto = document.getElementById ('text-new-card');
-let boton = document.getElementById('create-card');
+const tareas = [];
 
-console.log(titulo.value)
+let titulo = document.getElementById("title-new-card");
+let fecha = document.getElementById("date-new-card");
+let texto = document.getElementById("text-new-card");
+let boton = document.getElementById("create-card");
+let contenedor = document.getElementById("contenedor");
 
-localStorage.setItem('nickname','nick');
-localStorage.setItem('password','pass');
-
-let nickSaved = 'nick';
-let passSaved = 'pass';
+boton.addEventListener("click", () => {
+  crearTarea();
+  crearCarta();
+});
 
 
+/*
+localStorage.setItem("nickname", "nick");
+localStorage.setItem("password", "pass");
+*/
+let nickSaved = "nick";
+let passSaved = "pass";
 
-function login (nick,pass){
+function login(nick, pass) {
+  while (true) {
+    let nick = prompt("Escribe tu nick");
+    let pass = prompt("Escribe tu password");
 
-while (true) {
-  
-  let nick = prompt ('Escribe tu nick');
-  let pass = prompt ('Escribe tu password');
-
-    if ((nick === nickSaved)&&((pass === passSaved))){
-      alert('Bienvenido/a de vuelta');
-      break;}
-  
-      else{
-      alert('No te conozco, reintenta');
+    if (nick === nickSaved && pass === passSaved) {
+      alert("Bienvenido/a de vuelta");
+      break;
+    } else {
+      alert("No te conozco, reintenta");
     }
   }
 }
 
-function crearTarea (){
-  
-  let titulo = document.getElementById('title-new-card');
-  let fecha = document.getElementById('date-new-card');
-  let texto = document.getElementById('text-new-card');
+function crearTarea() {
+  let titulo = document.getElementById("title-new-card").value;
+  let fecha = document.getElementById("date-new-card").value;
+  let texto = document.getElementById("text-new-card").value;
 
-  const nuevaTarea = new Tarea (titulo, fecha, texto);
+  const nuevaTarea = new Tarea(titulo, fecha, texto);
+
   tareas.push(nuevaTarea);
-
 }
-function crearCarta (){
-boton.addEventListener('click', crearTarea(), ()=> {
-  let nuevoDiv = document.createElement ('div');
-  document.main.div.appendChild(nuevoDiv)
-  nuevoDiv.innerHTML+= 
-  `<div class="card card-body card__day">
-  <h5 class="card-title">${tareas[0]}</h5>
-  <h6 class="card-subtitle mb-2 text-muted">${tareas[1]}</h6>
-  <p class="card-text">${tareas[2]}</p>
+function crearCarta() {
+  let string = '';
+  let box = document.getElementById ('box-card')
+  for (let i = 0; i < tareas.length; i++) {
+    string += `<div id="${i}" class="new-card c1">
+  <h5 class="card-title">${tareas[i].titulo}</h5>
+  <h6 class="card-subtitle mb-2 text-muted">${tareas[i].fecha}</h6>
+  <p class="card-text">${tareas[i].texto}</p>
   <a href="#" class="delete-card">Delete card</a>
-  </div>`
-});
+  </div>`;
+  }
+  box.innerHTML = string ;
+  
+  let qsc1 = document.querySelectorAll('.c1');
+  qsc1.forEach(item => {item.addEventListener('click', () => {
+    let id = parseInt(item.id);
+    tareas.splice(id,1);
+    crearCarta();
+  })});
 }
-login(nickSaved,passSaved);
 
-crearCarta()
 
+
+
+
+/*
+
+
+
+let username = document.getElementById('username');
+let password = document.getElementById('password');
+let loginBoton = document.getElementById('button');
+
+
+loginBoton.addEventListener('click', () => {
+  localStorage.setItem('nick', username.value);
+  localStorage.setItem('pass', password.value);
+})
+
+let nameSaved = localStorage.getItem('nick');
+let contSaved = localStorage.getItem('pass');
+
+*/

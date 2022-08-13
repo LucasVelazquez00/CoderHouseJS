@@ -20,24 +20,22 @@
         <h1 class="title-h1" id="title"></h1>
         <div class="input-group user-login">
             <div class="user-login--position">
-                <input id="username" type="text" class="form-control user-login--text" placeholder="Nickname" aria-label="Nickname" aria-describedby="addon-wrapping">
-                <input id="password" type="text" class="form-control user-login--text" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
-                <button id="button" class="button">ingresa</button>
+                <a href="login.html"><button class="button">Cerrar sesion</button></a>
             </div>
         </div>
     </header>
     <main>
         <h2 class="title-h2">Buenas, esta es tu app para anotar tareas que tengas que realizar</h2>
         <p class="text-intro">Aquí tendrás que anotar la fecha, la tarea y la hora que quieras guardar</p>
-        <div class="card__countainer">
+        <div id="contenedor" class="card__countainer">
             <div class="card card-body card__day">
                 <h5 class="card-title">Crear tarea</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Fecha - Tarea - Hora</h6>
-                <p>crear tarjeta<b>"7/8-Ir al gym-17:00"</b>.</p>
+                <p>crear tarjeta<b>"GYM - 1.9 - Ir al gimnacio a las 18hs"</b>.</p>
                 <input id="title-new-card" type="text" class="title-new-card"placeholder="titulo">
                 <input id="date-new-card" type="text" class="date-new-card"placeholder="fecha">
                 <input id="text-new-card" type="text" class="text-new-card"placeholder="text">
-                <button id="create-card">new card</button>
+                <button id="create-card" class="btn-new-card">new card</button>
             </div>
             <div class="card card-body card__day">
                 <h5 class="card-title">Navidad</h5>
@@ -45,7 +43,11 @@
                 <p class="card-text">Cena de navidad 22:00hs.</p>
                 <a href="#" class="delete-card">Delete card</a>
             </div>
+
         </div>
+            <section id="box-card" class="box-card">
+                
+            </section>
     </main>
     <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
