@@ -10,19 +10,20 @@
 <body class="body">
     <main >
         <section class="section">
-            <div class="box-sesion">
-                <h2>Registrate</h2>
+            <div id ="l-b"class="box-sesion">
+                <h2>Login</h2>
                 <small>Nickname</small>
-                <input id="username" type="text" class="form-sesion" placeholder="Nickname" aria-label="Nickname" >
+                <input id="user-box" type="text" class="form-sesion" placeholder="Nickname" aria-label="Nickname" >
                 <small>Contraseña</small>
-                <input id="password" type="text" class="form-sesion" placeholder="Contraseña" aria-label="Contraseña">
+                <input id="pass-box" type="password" class="form-sesion" placeholder="Contraseña" aria-label="Contraseña">
+                <button><span id="cambiar-contraseña">Cambiar de contraseña</span></button>
                 <div class="btn">
-                    <a href="index.html"><input id="button" type="button"  class="btn-ingresar" value="ingresar"></a>
-                    <!--<button class="btn-ingresar" value="">Registrase</button>-->
+                    <button id="button-log" type="button"  class="btn-ingresar" value="ingresar">Ingresar</button>
                 </div>
             </div>
         </section>
     </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="login.js"></script>
 </body>
 </html>

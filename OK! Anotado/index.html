@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="style.css">
     <title>OK, Anotado!</title>
 </head>
@@ -20,11 +21,11 @@
         <h1 class="title-h1" id="title"></h1>
         <div class="input-group user-login">
             <div class="user-login--position">
-                <a href="login.html"><button class="button">Cerrar sesion</button></a>
+                <button id="close-sesion"class="button">Cerrar sesion</button>
             </div>
         </div>
     </header>
-    <main>
+    <main id="main">
         <h2 class="title-h2">Buenas, esta es tu app para anotar tareas que tengas que realizar</h2>
         <p class="text-intro">Aquí tendrás que anotar la fecha, la tarea y la hora que quieras guardar</p>
         <div id="contenedor" class="card__countainer">
@@ -41,7 +42,7 @@
                 <h5 class="card-title">Navidad</h5>
                 <h6 class="card-subtitle mb-2 text-muted">24.12</h6>
                 <p class="card-text">Cena de navidad 22:00hs.</p>
-                <a href="#" class="delete-card">Delete card</a>
+                <button class="delete-card">Delete card</button>
             </div>
 
         </div>
@@ -51,6 +52,8 @@
     </main>
     <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="script.js"></script>
 </body>
 </html>
